@@ -1,7 +1,7 @@
 'use strict';
 
 const catImage = document.getElementById('cat-image');
-const newCatButton = document.getElementById('new-cat-button');
+let breedSelect = document.getElementById('breed-select');
 
 function fetchCatImage() {
   fetch('https://api.thecatapi.com/v1/images/search')
