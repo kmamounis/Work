@@ -1,20 +1,13 @@
-'use strict';
-
 const catImage = document.getElementById('cat-image');
-let breedSelect = document.getElementById('breed-select');
+const newCatBtn = document.getElementById('new-cat-btn');
 
-function fetchCatImage() {
+function getCat() {
   fetch('https://api.thecatapi.com/v1/images/search')
     .then(response => response.json())
-    .then(data => {
-      const imageUrl = data[0].url;
-      catImage.src = imageUrl;
-    })
+    .then(data => catImage.src = data[0].url)
     .catch(error => console.error(error));
 }
 
-newCatButton.addEventListener('click', function() {
-  fetchCatImage();
-});
+newCatBtn.addEventListener('click', getCat);
 
-fetchCatImage();
+getCat();
